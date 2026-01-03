@@ -1,0 +1,52 @@
+@use '../base/variables';
+@use '../base/mixins';
+
+.theme-switcher--btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn,
+.add-exercise-btn {
+    @include mixins.add-btn-styles();
+    transition: variables.$transition;
+
+    &:hover {
+        background-color: variables.$btn-hover-color;
+    }
+}
+
+.delete-btn {
+    @include mixins.delete-btn-styles();
+}
+
+.add-set-btn{
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    transform: scale(2.5);
+    cursor: pointer;
+}
+
+.close-btn{
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    transform: scale(1.4);
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 1%;
+    color: variables.$btn-color;
+}
+
+.set-delete-btn,.card-delete-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.card-delete-btn{
+    padding-top: 20px;
+}

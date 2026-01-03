@@ -1,0 +1,43 @@
+@use '../base/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+input {
+    padding: 10px;
+    border-radius: variables.$border-radius;
+    width: 100%;
+    max-width: 250px;
+    border: 2px solid variables.$btn-color;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    font-size: clamp(13px, 0.125vw, 15px);
+}
+
+p{
+    font-size: variables.$p-font-size;
+}
+
+h3{
+    font-size: variables.$h3-font-size;
+}

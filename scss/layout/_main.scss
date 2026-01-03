@@ -1,0 +1,108 @@
+@use '../base/variables';
+@use '../base/mixins';
+
+
+
+.wrapper {
+    @include mixins.flex();
+    justify-content: center;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.wrapper.isHidden {
+    display: none;
+}
+
+.admin-container {
+    display: none;
+}
+
+.admin-container.isVisible {
+    @include mixins.flex();
+    justify-content: center;
+    gap: 60px;
+    padding-block: 30px;
+}
+
+.admin-info {
+    @include mixins.flex();
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+
+    .admin-h3{
+        font-size: clamp(24px, 0.0225vw, 27px);
+        text-align: center
+    }
+}
+
+.admin-cards {
+    @include mixins.grid();
+}
+
+.admin-card {
+    @include mixins.flex();
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    min-width: 200px;
+    min-height: auto;
+    background-color: variables.$card-color;
+    color: black;
+    box-shadow: variables.$card-shadow;
+    padding: 30px;
+    border-radius: variables.$border-radius;
+    transition: variables.$transition;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    p{
+        font-style: italic;
+        color: variables.$main-text-color;
+    }
+}
+
+.delete-btn-container {
+    max-width: 32px;
+    height: auto;
+}
+
+.sets-form {
+    position: absolute;
+    right: -20%;
+    max-width: 250px;
+    width: 100%;
+    max-height: 250px;
+    height: auto;
+    @include mixins.flex();
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: variables.$card-color;
+    color: black;
+    box-shadow: variables.$card-shadow;
+    padding: 30px;
+    border-radius: variables.$border-radius;
+    transition: variables.$transition;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .admin-container.isVisible{
+        flex-direction: column;
+        gap: 200px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .admin-info {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}

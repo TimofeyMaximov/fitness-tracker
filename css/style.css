@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 250px;
+  border: 2px solid #2563EB;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: clamp(13px, 0.125vw, 15px);
+}
+
+p {
+  font-size: clamp(15px, 0.015vw, 18px);
+}
+
+h3 {
+  font-size: clamp(22px, 0.02vw, 25px);
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  background-color: #F6F7FB;
+  color: #1F2937;
+}
+
+html.isDark {
+  background-color: #1F2937;
+  color: #FFFFFF;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+#header {
+  min-height: 20dvh;
+}
+
+#main {
+  min-height: 80dvh;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+}
+
+.header-logo,
+.header-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-user {
+  gap: 30px;
+}
+
+.image {
+  max-width: 32px;
+  aspect-ratio: 1;
+}
+
+.header-logo--name a {
+  font-size: clamp(18px, 1.66vw, 20px);
+  transition: 0.3s ease;
+}
+.header-logo--name a:hover {
+  text-decoration: underline;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.wrapper.isHidden {
+  display: none;
+}
+
+.admin-container {
+  display: none;
+}
+
+.admin-container.isVisible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding-block: 30px;
+}
+
+.admin-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.admin-info .admin-h3 {
+  font-size: clamp(24px, 0.0225vw, 27px);
+  text-align: center;
+}
+
+.admin-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.admin-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  min-width: 200px;
+  min-height: auto;
+  background-color: #FFFFFF;
+  color: black;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.admin-card:hover {
+  transform: translateY(-10px);
+}
+.admin-card p {
+  font-style: italic;
+  color: #1F2937;
+}
+
+.delete-btn-container {
+  max-width: 32px;
+  height: auto;
+}
+
+.sets-form {
+  position: absolute;
+  right: -20%;
+  max-width: 250px;
+  width: 100%;
+  max-height: 250px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: #FFFFFF;
+  color: black;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .admin-container.isVisible {
+    flex-direction: column;
+    gap: 200px;
+  }
+}
+@media (max-width: 991px) {
+  .admin-info {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+.theme-switcher--btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn,
+.add-exercise-btn {
+  background-color: #2563EB;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: 2px solid #E5E7EB;
+  color: #fff;
+  transition: 0.3s ease;
+}
+.btn:hover,
+.add-exercise-btn:hover {
+  background-color: #1D4ED8;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+.add-set-btn {
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  transform: scale(2.5);
+  cursor: pointer;
+}
+
+.close-btn {
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  transform: scale(1.4);
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 1%;
+  color: #2563EB;
+}
+
+.set-delete-btn, .card-delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card-delete-btn {
+  padding-top: 20px;
+}
+
+.workout-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.card {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  max-height: 350px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  background-color: #FFFFFF;
+  color: black;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  text-align: center;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.container-btn-set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.sets-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.sets-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 776px) {
+  .workout-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .workout-cards {
+    grid-template-columns: 1fr;
+  }
+}
+#workout-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

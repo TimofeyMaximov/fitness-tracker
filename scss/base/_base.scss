@@ -1,0 +1,41 @@
+@use 'variables';
+@use 'mixins';
+
+html {
+    font-family: 'Inter', sans-serif;
+    background-color: variables.$background;
+    color: variables.$main-text-color;
+}
+
+html.isDark {
+    background-color: variables.$main-text-color;
+    color: variables.$card-color;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+
+// body {
+//     display: flex;
+//     flex-direction: column;
+//     min-height: 100vh;
+// }
+
+// #header{
+//    flex: 1;
+// }
+
+// #main{
+//    flex: 2;
+// }
+
+#header{
+    min-height: 20dvh;
+}
+
+#main{
+    min-height: 80dvh;
+}

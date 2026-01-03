@@ -1,0 +1,61 @@
+@use '../base/variables';
+@use '../base/mixins';
+
+.workout-cards {
+    @include mixins.card-grid();
+    padding-bottom: 30px;
+}
+
+.card {
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    max-height: 350px;
+    height: auto;
+    @include mixins.flex();
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    background-color: variables.$card-color;
+    color: black;
+    box-shadow: variables.$card-shadow;
+    padding: 30px;
+    border-radius: variables.$border-radius;
+    transition: variables.$transition;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+}
+
+.container-btn-set{
+    @include mixins.flex();
+    justify-content: center;
+    gap: 30px;
+}
+
+.sets-container{
+    @include mixins.flex();
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sets-list-container{
+    @include mixins.flex();
+    justify-content: center;
+    gap: 20px;
+}
+
+@media (max-width: 776px) {
+    .workout-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .workout-cards {
+        grid-template-columns: 1fr;
+    }
+}

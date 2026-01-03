@@ -1,0 +1,10 @@
+@use '../base/variables';
+@use '../base/mixins';
+
+#workout-form {
+    @include mixins.flex();
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+

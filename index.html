@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Tracker</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="header__nav">
+                <div class="header-logo">
+                    <div class="header-logo--img image">
+                        <a href="#">
+                            <img src="./images/header-images/header-logo.svg" alt="strong man logo" width="32px"
+                                height="32px">
+                        </a>
+                    </div>
+                    <div class="header-logo--name">
+                        <a href="#">Training Tracker</a>
+                    </div>
+                </div>
+
+                <div class="header-user">
+                    <div class="theme-switcher__container image">
+                        <button class="theme-switcher--btn">
+                            <img class="theme-logo" src="./images/header-images/moon.svg" alt="theme logo" width="32px"
+                                height="32px">
+                        </button>
+                    </div>
+                    <div class="header-user--img image">
+                        <a href="#">
+                            <img src="./images/header-images/header-user.svg" alt="user logo" width="32px"
+                                height="32px">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <main id="main">
+        <div class="container">
+            <div class="wrapper">
+
+                <form action="" id="workout-form">
+                    <input type="text" id="exercise-name" name="exerciseName" placeholder="Exercise name" required>
+                </form>
+
+                <div class="add-btn__container">
+                    <button class="add-btn btn">Add workout</button>
+                </div>
+
+                <div class="workout-cards">
+                </div>
+            </div>
+
+            <div class="admin-container">
+                <div class="admin-info">
+                    <div class="admin-text">
+                        <h3 class="admin-h3">Core Implementation Details</h3>
+                    </div>
+                    <div class="admin-cards">
+                        <div class="admin-card">
+                            <h3>Vanilla SPA Engine</h3>
+                            <p>Приложение построено на Pure JS (ES6+) без фреймворков. Модульная архитектура
+                                обеспечивает
+                                полный контроль над логикой и высокую производительность. Состояние данных (State)
+                                управляется вручную</p>
+                        </div>
+                        <div class="admin-card">
+                            <h3>Browser API Routing</h3>
+                            <p>Навигация реализована через URLSearchParams. Это легкое решение для SPA, которое
+                                позволяет
+                                сохранять состояние страницы в URL и мгновенно переключаться между разделами без
+                                перезагрузки</p>
+                        </div>
+                        <div class="admin-card">
+                            <h3>Dynamic Appearance</h3>
+                            <p>Динамическая смена тем на CSS-переменных. Выбор пользователя сохраняется в LocalStorage,
+                                обеспечивая консистентный дизайн и удобство при каждом входе в систему</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src=" ./js/app.js">
+    </script>
+
+</body>
+
+</html>
