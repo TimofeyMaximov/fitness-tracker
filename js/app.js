@@ -8,6 +8,7 @@ import { addSet } from "./data.js";
 import { setsForm } from "./ui.js";
 import { deleteSet } from "./data.js";
 import { deleteCard } from "./data.js";
+import { LangSwitcher } from "./lang-switcher.js";
 
 renderUI(workouts)
 
@@ -38,6 +39,7 @@ home.addEventListener('click', () => {
 })
 
 new ThemeSwitcher()
+new LangSwitcher()
 
 const form = document.querySelector('#workout-form')
 const exerciseInput = form.exerciseName

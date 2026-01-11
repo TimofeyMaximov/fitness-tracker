@@ -97,6 +97,10 @@ html.isDark {
   text-decoration: underline;
 }
 
+.lang-switcher--btn {
+  font-size: clamp(22px, 0.02vw, 25px);
+}
+
 .wrapper {
   display: flex;
   align-items: center;
@@ -203,7 +207,7 @@ html.isDark {
     gap: 50px;
   }
 }
-.theme-switcher--btn {
+.switch-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -250,7 +254,8 @@ html.isDark {
   color: #2563EB;
 }
 
-.set-delete-btn, .card-delete-btn {
+.set-delete-btn,
+.card-delete-btn {
   background-color: transparent;
   border: none;
   cursor: pointer;

@@ -1,7 +1,7 @@
 @use '../base/variables';
 @use '../base/mixins';
 
-.theme-switcher--btn {
+.switch-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -21,7 +21,7 @@
     @include mixins.delete-btn-styles();
 }
 
-.add-set-btn{
+.add-set-btn {
     padding: 3px;
     background-color: transparent;
     border: none;
@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 
-.close-btn{
+.close-btn {
     padding: 3px;
     background-color: transparent;
     border: none;
@@ -41,12 +41,13 @@
     color: variables.$btn-color;
 }
 
-.set-delete-btn,.card-delete-btn{
+.set-delete-btn,
+.card-delete-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
-.card-delete-btn{
+.card-delete-btn {
     padding-top: 20px;
 }
