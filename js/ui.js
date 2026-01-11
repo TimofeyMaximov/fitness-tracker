@@ -108,6 +108,10 @@ export const setsForm = (workoutId, exerciseId) => {
 
     form.append(closeBtn, weigthInput, repsInput, applyBtn)
 
+    if (window.langSwitcher) {
+        window.langSwitcher.render();
+    }
+
     return form
 }
 

@@ -1,58 +1,63 @@
 export class LangSwitcher {
     constructor() {
-        this.langSwitchBtn = document.querySelector('.lang-switcher--btn')
-        this.exerciseNameInp = document.querySelector('#exercise-name')
-        this.addBtn = document.querySelector('.add-btn')
-        this.adminH3 = document.querySelector('.admin-h3')
-        this.spaText = document.querySelector('.spa-text')
-        this.apiText = document.querySelector('.api-text')
-        this.appearenceText = document.querySelector('.appearence-text')
+        this.langSwitchBtn = document.querySelector('.lang-switcher--btn');
+        this.currentLang = localStorage.getItem('lang') || 'EN';
 
-        this.currentLang = localStorage.getItem('lang') || 'EN'
-
-        this.render()
-        this.bindEvents()
+        this.bindEvents();
+        this.render();
     }
 
     toggle() {
-        this.currentLang = this.currentLang === 'EN' ? 'RU' : 'EN'
-        localStorage.setItem('lang', this.currentLang)
+        this.currentLang = this.currentLang === 'EN' ? 'RU' : 'EN';
+        localStorage.setItem('lang', this.currentLang);
     }
 
     render() {
-        const weightInp = document.querySelector('.weight-input')
-        const repsInp = document.querySelector('.reps-input')
-        const applyBtn = document.querySelector('.apply-btn')
+        const elements = {
+            exerciseNameInp: document.querySelector('#exercise-name'),
+            addBtn: document.querySelector('.add-btn'),
+            adminH3: document.querySelector('.admin-h3'),
+            spaText: document.querySelector('.spa-text'),
+            apiText: document.querySelector('.api-text'),
+            appearenceText: document.querySelector('.appearence-text'),
+            weightInp: document.querySelector('.weight-input'),
+            repsInp: document.querySelector('.reps-input'),
+            applyBtn: document.querySelector('.apply-btn')
+        };
+
+        if (this.langSwitchBtn) {
+            this.langSwitchBtn.textContent = this.currentLang;
+        }
 
         if (this.currentLang === 'RU') {
-            this.langSwitchBtn.textContent = 'RU'
-            this.exerciseNameInp.placeholder = 'Название упражнения'
-            this.addBtn.textContent = 'Добавить тренировку'
-            this.adminH3.textContent = 'Детали базовой реализации'
-            this.spaText.textContent = 'Ванильный SPA-движок'
-            this.apiText.textContent = 'Маршрутизация API браузера'
-            this.appearenceText.textContent = 'Динамический внешний вид'
-            if (weightInp) weightInp.placeholder = 'Вес';
-            if (repsInp) repsInp.placeholder = 'Повторения';
-            if (applyBtn) applyBtn.textContent = 'Применить';
+            if (elements.exerciseNameInp) elements.exerciseNameInp.placeholder = 'Название упражнения';
+            if (elements.addBtn) elements.addBtn.textContent = 'Добавить тренировку';
+            if (elements.adminH3) elements.adminH3.textContent = 'Детали базовой реализации';
+            if (elements.spaText) elements.spaText.textContent = 'Ванильный SPA-движок';
+            if (elements.apiText) elements.apiText.textContent = 'Маршрутизация API браузера';
+            if (elements.appearenceText) elements.appearenceText.textContent = 'Динамический внешний вид';
+            if (elements.weightInp) elements.weightInp.placeholder = 'Вес';
+            if (elements.repsInp) elements.repsInp.placeholder = 'Повторения';
+            if (elements.applyBtn) elements.applyBtn.textContent = 'Применить';
         } else {
-            this.langSwitchBtn.textContent = 'EN'
-            this.exerciseNameInp.placeholder = 'Exercise Name'
-            this.addBtn.textContent = 'Add workout'
-            this.adminH3.textContent = 'Core Implementation Details'
-            this.spaText.textContent = 'Vanilla SPA Engine'
-            this.apiText.textContent = 'Browser API Routing'
-            this.appearenceText.textContent = 'Dynamic Appearance'
-            if (weightInp) weightInp.placeholder = 'Weight'
-            if (repsInp) repsInp.placeholder = 'Reps'
-            if (applyBtn) applyBtn.textContent = 'Apply'
+            if (elements.exerciseNameInp) elements.exerciseNameInp.placeholder = 'Exercise Name';
+            if (elements.addBtn) elements.addBtn.textContent = 'Add workout';
+            if (elements.adminH3) elements.adminH3.textContent = 'Core Implementation Details';
+            if (elements.spaText) elements.spaText.textContent = 'Vanilla SPA Engine';
+            if (elements.apiText) elements.apiText.textContent = 'Browser API Routing';
+            if (elements.appearenceText) elements.appearenceText.textContent = 'Dynamic Appearance';
+            if (elements.weightInp) elements.weightInp.placeholder = 'Weight';
+            if (elements.repsInp) elements.repsInp.placeholder = 'Reps';
+            if (elements.applyBtn) elements.applyBtn.textContent = 'Apply';
         }
     }
 
     bindEvents() {
-        this.langSwitchBtn.addEventListener('click', () => {
-            this.toggle()
-            this.render()
-        })
+        if (this.langSwitchBtn) {
+            this.langSwitchBtn.addEventListener('click', () => {
+                this.toggle();
+                this.render();
+            });
+        }
     }
 }
